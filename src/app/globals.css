@@ -7,7 +7,7 @@ body {
   background-image: url("/robot.png");
   background-size: cover;
   background-position: center;
-
+  overflow: hidden;
   /* background: linear-gradient(
       to bottom,
       transparent,
@@ -36,7 +36,7 @@ section {
   height: 0;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
-  border-right: 10px solid #c6f6d5; 
+  border-right: 10px solid #c6f6d5;
   transform: translateX(1px) translateY(10px);
 }
 .triangle-right {
@@ -65,7 +65,7 @@ section {
 .scroller-content {
 }
 .scroller .scroller-content .chat-message {
-  transform: translateZ(0); 
+  transform: translateZ(0);
   /* fixes a bug in Safari iOS where the scroller doesn't update */
 }
 
