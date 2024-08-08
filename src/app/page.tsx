@@ -34,7 +34,7 @@ export default function Home() {
       let result = "";
 
       if (reader) {
-        const processText = async ({
+        const processText:any = async ({
           done,
           value,
         }: {
@@ -50,7 +50,7 @@ export default function Home() {
 
           result += text;
 
-          setMessages((messages) => {
+          setMessages((messages:any) => {
             let lastMessage = messages[messages.length - 1];
             let otherMessages = messages.slice(0, messages.length - 1);
             return [
