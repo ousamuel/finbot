@@ -34,7 +34,7 @@ export default function Home() {
       let result = "";
 
       if (reader) {
-        const processText:any = async ({
+        const processText: any = async ({
           done,
           value,
         }: {
@@ -50,7 +50,7 @@ export default function Home() {
 
           result += text;
 
-          setMessages((messages:any) => {
+          setMessages((messages: any) => {
             let lastMessage = messages[messages.length - 1];
             let otherMessages = messages.slice(0, messages.length - 1);
             return [
@@ -72,7 +72,7 @@ export default function Home() {
   return (
     <main className="h-[100vh] w-[100vw] flex flex-col justify-between">
       {/* <RobotBackground /> */}
-      <section className="chat-box p-5 mx-auto">
+      <section className="chat-box p-5 mx-auto mt-20 rounded-b-md">
         <div className="scroller-content">
           {messages.map((message: any, i: number) => {
             let splitm = message.content.split("<br/>");
@@ -103,12 +103,17 @@ export default function Home() {
             );
           })}
         </div>
-        <h1 className="text-green-200 bg-black p-2 py-3 mb-3 rounded-md text-center uppercase">
-          <strong className="text-xl">Finbot</strong>
-          <br /> dedicated to providing personalized financial advice, planning,
-          and support.
-        </h1>
       </section>
+      <h1 className="header mx-auto my-2 p-2 py-3 rounded-md uppercase ">
+        <strong className="text-xl">Finbot</strong>
+        <span className="hidden sm:block">
+          dedicated to providing personalized financial advice, planning, and
+          support.
+        </span>
+        <span className="block sm:hidden">
+          Virtual Finance Assistant
+        </span>
+      </h1>
       <section
         id="user-message"
         className="w-full h-[10vh] min-h-[75px] mx-auto"
@@ -120,15 +125,14 @@ export default function Home() {
             e.preventDefault();
           }}
         >
-          <div className='w-4/5 px-4 rounded-full bg-black text-gray-200'>
-
-          <input
-            className="bg-transparent h-fit w-full py-2 px-5 outline-none "
-            value={message}
-            placeholder="Hit Enter to send a message"
-            onChange={(e) => setMessage(e.target.value)}
+          <div className="w-5/6 px-4 rounded-full bg-black text-gray-200">
+            <input
+              className="bg-transparent h-fit w-full py-2 px-5 outline-none "
+              value={message}
+              placeholder="Hit Enter to send a message"
+              onChange={(e) => setMessage(e.target.value)}
             />
-            </div>
+          </div>
 
           {/* <input type="submit" value="Send" onClick={sendMessage} /> */}
         </form>

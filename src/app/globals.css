@@ -7,13 +7,11 @@ body {
   background-image: url("/robot.png");
   background-size: cover;
   background-position: center;
-  overflow: hidden;
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+section::-webkit-scrollbar {
+  display: none;
 }
 
 @layer utilities {
@@ -30,6 +28,18 @@ section {
   width: 100%;
   max-width: 850px;
 }
+.header {
+  background-color: black;
+  text-align: center;
+  color: #c6f6d5;
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 90%;
+  max-width: 900px;
+
+}
+
 .triangle-left {
   position: relative;
   width: 0;
@@ -51,7 +61,7 @@ section {
 
 .chat-box {
   overflow: auto;
-  max-height: 85vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column-reverse;
   overflow-anchor: auto !important;
