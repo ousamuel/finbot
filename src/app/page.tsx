@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { Image } from "@nextui-org/image";
-import RobotBackground from "./Robot";
+// import RobotBackground from "./Robot";
 export default function Home() {
   const [messages, setMessages] = useState<any>([
     {
